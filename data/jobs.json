@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Registered Nurse",
+    "country": "United Kingdom",
+    "city": "London",
+    "employer": "NHS Trust",
+    "salary": "£28,000 - £34,000 per year",
+    "visa": "Tier 2 Skilled Worker",
+    "contractType": "Full-time",
+    "category": "Healthcare",
+    "description": "Provide patient-centered nursing care in a hospital setting. IELTS/OET required.",
+    "requirements": [
+      "Valid PRC license",
+      "2+ years hospital experience",
+      "IELTS/OET pass score",
+      "Willing to relocate"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Software Engineer",
+    "country": "Japan",
+    "city": "Tokyo",
+    "employer": "FinTech Corp",
+    "salary": "¥6,000,000 - ¥9,000,000 per year",
+    "visa": "Engineer/Specialist in Humanities/International Services",
+    "contractType": "Full-time",
+    "category": "Technology",
+    "description": "Develop backend services in Node.js and Go for a fintech platform.",
+    "requirements": [
+      "3+ years software development",
+      "Experience with Node.js or Go",
+      "English proficiency; Japanese a plus",
+      "Bachelor's in CS or related"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Caregiver",
+    "country": "Canada",
+    "city": "Toronto",
+    "employer": "HomeCare Plus",
+    "salary": "CAD 16 - 20 per hour",
+    "visa": "Temporary Foreign Worker Program",
+    "contractType": "Full-time",
+    "category": "Caregiving",
+    "description": "Assist elderly clients with daily living activities in-home.",
+    "requirements": [
+      "NC II Caregiving",
+      "At least 1 year related experience",
+      "First aid certification",
+      "Willing to work shifts"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "HVAC Technician",
+    "country": "United Arab Emirates",
+    "city": "Dubai",
+    "employer": "Gulf Facilities Mgmt",
+    "salary": "AED 3,500 - 5,000 per month",
+    "visa": "Company-sponsored",
+    "contractType": "Full-time",
+    "category": "Skilled Trades",
+    "description": "Install and maintain HVAC systems in commercial buildings.",
+    "requirements": [
+      "TESDA certification",
+      "3+ years HVAC experience",
+      "Able to read schematics",
+      "No placement fee"
+    ]
+  }
+]

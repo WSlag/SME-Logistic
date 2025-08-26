@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Trabaho Abroad PH — Find Overseas Jobs</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+	<header class="header">
+		<h1>Trabaho Abroad PH</h1>
+		<p class="tagline">Overseas opportunities for Filipino talent</p>
+	</header>
+
+	<main class="container">
+		<section class="filters">
+			<input id="q" type="search" placeholder="Search job title, employer…" />
+			<select id="country">
+				<option value="">All Countries</option>
+			</select>
+			<select id="category">
+				<option value="">All Categories</option>
+			</select>
+			<button id="applyFilters">Search</button>
+		</section>
+
+		<section id="results" class="results"></section>
+	</main>
+
+	<div id="modal" class="modal hidden">
+		<div class="modal-content">
+			<button id="closeModal" class="close">×</button>
+			<h2 id="modalTitle">Apply</h2>
+			<form id="applyForm">
+				<input type="hidden" name="jobId" id="jobId" />
+				<label>Full name<input name="fullName" id="fullName" required /></label>
+				<label>Email<input type="email" name="email" id="email" required /></label>
+				<label>Phone<input name="phone" id="phone" /></label>
+				<label>CV/Portfolio URL<input type="url" name="cvUrl" id="cvUrl" /></label>
+				<label>Message<textarea name="message" id="message" rows="4" placeholder="Briefly introduce yourself"></textarea></label>
+				<button type="submit">Submit application</button>
+			</form>
+			<p id="formStatus" class="status"></p>
+		</div>
+	</div>
+
+	<script src="/main.js" defer></script>
+</body>
+</html>
