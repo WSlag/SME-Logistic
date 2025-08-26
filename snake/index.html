@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snake</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="topbar">
+      <h1 class="title">Snake</h1>
+      <div class="spacer"></div>
+      <div class="scores">
+        <div class="score">Score: <span id="score">0</span></div>
+        <div class="best">Best: <span id="best">0</span></div>
+      </div>
+      <div class="controls">
+        <button id="pauseBtn" aria-pressed="false" title="Space">Pause</button>
+        <button id="restartBtn" title="Enter">Restart</button>
+      </div>
+    </header>
+
+    <section class="stage">
+      <canvas id="game" width="480" height="480" aria-label="Snake game board" role="img"></canvas>
+      <div id="hint" class="hint">Swipe or use arrow keys</div>
+    </section>
+
+    <footer class="footer">
+      <p>Controls: Arrows/WASD to move · Space to Pause/Resume · Enter to Restart</p>
+    </footer>
+  </main>
+
+  <script src="./main.js" defer></script>
+</body>
+</html>
