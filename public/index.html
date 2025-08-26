@@ -46,6 +46,22 @@
 		</div>
 	</div>
 
+	<div id="chatModal" class="modal hidden">
+		<div class="modal-content chat">
+			<button id="closeChat" class="close">×</button>
+			<h2 id="chatTitle">Chat</h2>
+			<div class="chat-identify">
+				<label>Full name<input id="chatName" placeholder="Your name" /></label>
+				<label>Email<input id="chatEmail" type="email" placeholder="your@email.com" /></label>
+			</div>
+			<div id="chatMessages" class="chat-messages"></div>
+			<form id="chatForm" class="chat-form">
+				<input id="chatInput" placeholder="Type a message…" required />
+				<button type="submit">Send</button>
+			</form>
+		</div>
+	</div>
+
 	<script src="/main.js" defer></script>
 </body>
 </html>

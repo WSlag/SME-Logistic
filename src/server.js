@@ -16,6 +16,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 // Data paths
 const jobsFilePath = path.join(__dirname, '..', 'data', 'jobs.json');
 const applicationsFilePath = path.join(__dirname, '..', 'data', 'applications.json');
+const messagesFilePath = path.join(__dirname, '..', 'data', 'messages.json');
 
 function readJsonFile(filePath) {
 	try {
@@ -33,6 +34,10 @@ function readJsonFile(filePath) {
 function writeJsonFile(filePath, data) {
 	fs.mkdirSync(path.dirname(filePath), { recursive: true });
 	fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+}
+
+function normalizeEmail(email) {
+	return String(email || '').trim().toLowerCase();
 }
 
 // API endpoints scaffolding
@@ -75,6 +80,42 @@ app.post('/api/applications', (req, res) => {
 	applications.push(newApplication);
 	writeJsonFile(applicationsFilePath, applications);
 	res.status(201).json({ success: true, application: newApplication });
+});
+
+// Messages API
+app.get('/api/messages', (req, res) => {
+	const jobId = req.query.jobId;
+	const jobseekerEmail = normalizeEmail(req.query.jobseekerEmail);
+	if (!jobId || !jobseekerEmail) {
+		return res.status(400).json({ error: 'jobId and jobseekerEmail are required' });
+	}
+	const messages = readJsonFile(messagesFilePath)
+		.filter(m => String(m.jobId) === String(jobId) && normalizeEmail(m.jobseekerEmail) === jobseekerEmail)
+		.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+	res.json(messages);
+});
+
+app.post('/api/messages', (req, res) => {
+	const { jobId, jobseekerEmail, senderType, senderName, text } = req.body;
+	if (!jobId || !jobseekerEmail || !senderType || !text) {
+		return res.status(400).json({ error: 'jobId, jobseekerEmail, senderType, and text are required' });
+	}
+	if (!['jobseeker', 'employer'].includes(senderType)) {
+		return res.status(400).json({ error: 'senderType must be jobseeker or employer' });
+	}
+	const messages = readJsonFile(messagesFilePath);
+	const newMessage = {
+		id: messages.length ? messages[messages.length - 1].id + 1 : 1,
+		createdAt: new Date().toISOString(),
+		jobId,
+		jobseekerEmail: normalizeEmail(jobseekerEmail),
+		senderType,
+		senderName: senderName || '',
+		text: String(text)
+	};
+	messages.push(newMessage);
+	writeJsonFile(messagesFilePath, messages);
+	res.status(201).json({ success: true, message: newMessage });
 });
 
 // Fallback to index.html for SPA routes (exclude API routes)
