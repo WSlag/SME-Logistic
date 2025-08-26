@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "id": 1,
+    "createdAt": "2025-08-26T12:04:21.246Z",
+    "jobId": 1,
+    "jobseekerEmail": "juan@example.com",
+    "senderType": "jobseeker",
+    "senderName": "Juan",
+    "text": "Hello!"
+  }
+]
