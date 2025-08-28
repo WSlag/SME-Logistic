@@ -1,0 +1,131 @@
+:root {
+  --bg: #0f1220;
+  --bg-2: #151a2f;
+  --fg: #e7eaf6;
+  --muted: #a9b1d6;
+  --accent: #6be675;
+  --accent-2: #58c4ff;
+  --danger: #ff6b6b;
+  --grid-a: #12162a;
+  --grid-b: #101427;
+  --tile: #2de56b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--fg);
+  background: radial-gradient(1200px 800px at 10% 10%, #121632 0%, var(--bg) 50%);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.scores {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  appearance: none;
+  border: 1px solid #2a335a;
+  background: linear-gradient(180deg, #1b2141 0%, #151a2f 100%);
+  color: var(--fg);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  border-color: #3d4980;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.stage {
+  position: relative;
+  align-self: center;
+  width: min(92vmin, 820px);
+}
+
+#game {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  background: repeating-conic-gradient(from 45deg, var(--grid-a) 0% 25%, var(--grid-b) 0% 50%) 0 0/48px 48px;
+  border-radius: 18px;
+  border: 1px solid #2a335a;
+  box-shadow: 0 20px 80px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.03);
+}
+
+.hint {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: end center;
+  padding: 14px;
+  color: var(--muted);
+  opacity: 0.85;
+  pointer-events: none;
+  font-size: 13px;
+}
+
+.footer {
+  color: var(--muted);
+  text-align: center;
+  font-size: 13px;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
