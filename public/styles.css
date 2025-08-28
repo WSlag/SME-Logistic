@@ -1,0 +1,39 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: #0f172a; background: #f8fafc; }
+.header { padding: 24px; background: linear-gradient(120deg, #0ea5e9, #22c55e); color: white; text-align: center; }
+.header h1 { margin: 0; font-size: 28px; }
+.header .tagline { margin: 6px 0 0; opacity: .95; }
+.container { padding: 16px; max-width: 1000px; margin: 0 auto; }
+.filters { display: grid; grid-template-columns: 1fr; gap: 8px; margin-bottom: 16px; }
+.filters input, .filters select { padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 8px; background: white; }
+.filters button { padding: 10px 12px; background: #0ea5e9; color: white; border: none; border-radius: 8px; cursor: pointer; }
+.results { display: grid; gap: 12px; }
+.card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; display: grid; gap: 8px; }
+.card h3 { margin: 0; font-size: 18px; }
+.meta { color: #334155; font-size: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+.badge { background: #e2e8f0; color: #0f172a; padding: 2px 8px; border-radius: 999px; font-size: 12px; }
+.card button { justify-self: start; padding: 8px 12px; background: #22c55e; color: white; border: none; border-radius: 8px; cursor: pointer; }
+
+.modal { position: fixed; inset: 0; background: rgba(15,23,42,.6); display: grid; place-items: center; padding: 16px; }
+.modal.hidden { display: none; }
+.modal-content { background: white; border-radius: 12px; padding: 16px; width: 100%; max-width: 480px; position: relative; }
+.close { position: absolute; right: 8px; top: 8px; background: #e2e8f0; border: none; border-radius: 999px; width: 32px; height: 32px; cursor: pointer; }
+form { display: grid; gap: 8px; }
+label { display: grid; gap: 4px; font-size: 14px; }
+input, textarea { padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 8px; }
+.status { margin-top: 8px; font-size: 14px; }
+
+/* Chat modal */
+.modal-content.chat { max-width: 640px; display: grid; gap: 8px; }
+.chat-identify { display: grid; gap: 8px; grid-template-columns: 1fr; }
+.chat-messages { height: 320px; overflow: auto; background: #f1f5f9; border-radius: 8px; padding: 8px; display: grid; gap: 6px; align-content: start; }
+.chat-form { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+.bubble { max-width: 80%; padding: 8px 10px; border-radius: 12px; font-size: 14px; }
+.bubble.me { background: #22c55e; color: white; justify-self: end; border-bottom-right-radius: 4px; }
+.bubble.them { background: white; border: 1px solid #cbd5e1; justify-self: start; border-bottom-left-radius: 4px; }
+.bubble .meta { font-size: 11px; color: #475569; }
+
+@media (min-width: 720px) {
+	.filters { grid-template-columns: 1fr 1fr 1fr auto; }
+	.chat-identify { grid-template-columns: 1fr 1fr; }
+}
